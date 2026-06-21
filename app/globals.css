@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Claude-inspired theme tokens. Light is default; .dark on <html> flips them. */
+:root {
+  --canvas: #faf9f5; /* warm cream */
+  --surface: #ffffff;
+  --ink: #141413; /* near-black warm */
+  --muted: #73726c;
+  --line: #e7e5dc;
+  --accent: #c2614a; /* Claude coral / book cloth */
+  --accent-hover: #a94f3a;
+  --safe: #2f7d55;
+  --warning: #b07a1e;
+  --block: #c0392b;
+}
+
+.dark {
+  --canvas: #262624; /* warm charcoal */
+  --surface: #30302e;
+  --ink: #f5f4ee;
+  --muted: #a3a299;
+  --line: #45453f;
+  --accent: #d97757; /* brighter coral for dark */
+  --accent-hover: #e58c6f;
+  --safe: #6fbf8e;
+  --warning: #e0a458;
+  --block: #e06a55;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+  font-family:
+    "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
